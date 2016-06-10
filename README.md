@@ -1,0 +1,2 @@
+# AndroidUdpDemo
+这是用验证Android广播数据到CP端，CP端从广播数据中获取IP并回发UDP数据的Demo。
