@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
 		}.start();
 		new Thread(){
 			public void run() {
-				revicedMobileResponse();
+				receivePCResponse();
 			};
 		}.start();
 	}
@@ -60,10 +60,10 @@ public class MainActivity extends Activity {
 		}
 		//isRecived 为 true 说明收到广播 启动reciveDataUpd（）
 		Log.e("MainActivity","----------------------");
-		Log.e("MainActivity","revicedMobileResponsed");
+		Log.e("MainActivity","receivePCResponsed");
 		Log.e("MainActivity","----------------------");
 	}	
-	public void revicedMobileResponse(){ 
+	public void receivePCResponse(){ 
 		try{
 			DatagramSocket server = new DatagramSocket(BROADCAST_RES_PORT);
 	        byte[] recvBuf = new byte[100];
@@ -79,6 +79,7 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
+	
 	public boolean checkNetworkAvailable(Context context) {
 		ConnectivityManager connectivity = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
